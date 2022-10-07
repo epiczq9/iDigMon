@@ -6,14 +6,15 @@ public class Plushie : MonoBehaviour
 {
     public GameObject plushie;
     SkinnedMeshRenderer smr;
-    private float blendMax = 100f;
+    private readonly float blendMax = 100f;
     public float blendCurrent = 0f;
     public float blendSpeed = 100f;
-    bool openMouthBool = false;
+    public bool openMouthBool = false;
     int blendCount;
     void Start() {
         smr = plushie.GetComponent<SkinnedMeshRenderer>();
         blendCount = smr.sharedMesh.blendShapeCount;
+        Debug.Log(blendCount);
     }
 
     void Update() {
@@ -28,7 +29,7 @@ public class Plushie : MonoBehaviour
 
     public void OpenMouth() {
         if (blendCurrent < blendMax) {
-            for(int i = 0; i > blendCount; i++) {
+            for(int i = 0; i < blendCount; i++) {
                 smr.SetBlendShapeWeight(i, blendCurrent);
             }
             blendCurrent += blendSpeed * Time.deltaTime;
