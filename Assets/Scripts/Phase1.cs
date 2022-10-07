@@ -18,7 +18,7 @@ public class Phase1 : MonoBehaviour
     private void Update() {
         if(swipeDet.outputText.text == "UP" && slimeActive) {
             TakeOutSlimeBox();
-        } else if (Input.GetAxis("Vertical") > 0) {
+        } else if (Input.GetAxis("Vertical") > 0 && slimeActive) {
             TakeOutSlimeBox();
         }
     }
