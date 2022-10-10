@@ -8,26 +8,48 @@ using Timers;
 public class Phase2 : MonoBehaviour
 {
     public GameObject slimeBox, slimeLid, tools, slimeContainer, slime, slimeTape;
-    public Transform lidRaisedPos, lidSetAsidePos1, lidSetAsidePos2, toolsOutPos, toolsSetAsidePos1, toolsSetAsidePos2, tapePeeledPos, slimeTurnOverPos;
-    public CinemachineVirtualCamera vCamStart, vCamLidPeeling;
+    public Transform lidRaisedPos, lidSetAsidePos1, lidSetAsidePos2, toolsOutPos, toolsSetAsidePos1, toolsSetAsidePos2,
+        tapePeeledPos, slimeTurnOverPos, slimePutDownPos;
+    public CinemachineVirtualCamera vCamStart, vCamLidPeeling, vCamBoxPutDown, vCamFinish;
     public Animator tapeAnimator;
 
     public bool lidRaised = false;
     public bool lidCanBeRaised = false;
     public bool tapePeeled = false;
     public bool tapeCanBePeeled = false;
+    public bool boxTurnedOver = false;
+    public bool boxCanBeTurnedOver = false;
+    public bool boxPutDown = false;
+    public bool boxCanBePutDown = false;
 
     public SwipeDetector swipeDet;
+
+    public GameObject phaseToActivate;
 
     private void Update() {
         if (swipeDet.outputText.text == "UP" || (Input.GetAxis("Vertical") > 0)) {
             if (!lidRaised) {
                 RaiseLid();
             }
-        } else if(swipeDet.outputText.text == "LEFT" || (Input.GetAxis("Horizontal") < 0)) {
+            swipeDet.outputText.text = "EMPTY";
+        } else if (swipeDet.outputText.text == "LEFT" || (Input.GetAxis("Horizontal") < 0)) {
             if (!tapePeeled && tapeCanBePeeled) {
                 PeelOffTape();
+                tapeCanBePeeled = false;
             }
+            swipeDet.outputText.text = "EMPTY";
+        } else if (swipeDet.outputText.text == "RIGHT" || (Input.GetAxis("Horizontal") > 0)) {
+            if (!boxTurnedOver && boxCanBeTurnedOver) {
+                TurnOverSlimeBox();
+            }
+            swipeDet.outputText.text = "EMPTY";
+        } else if (swipeDet.outputText.text == "DOWN" || (Input.GetAxis("Vertical") < 0)) {
+            if (!boxTurnedOver && boxCanBeTurnedOver) {
+                TurnOverSlimeBox();
+            } else if (!boxPutDown && boxCanBePutDown) {
+                PutDownSlimeBox();
+            }
+            swipeDet.outputText.text = "EMPTY";
         }
     }
 
@@ -47,9 +69,10 @@ public class Phase2 : MonoBehaviour
         slimeLid.transform.DOMove(lidSetAsidePos2.position, 1f);
         slimeLid.transform.DORotate(lidSetAsidePos2.eulerAngles, 1f);
         tools.transform.DOMove(toolsSetAsidePos2.position, 1f);
-        tools.transform.DORotate(toolsSetAsidePos2.eulerAngles, 1f).OnComplete(SwitchCams);
+        tools.transform.DORotate(toolsSetAsidePos2.eulerAngles, 1f).OnComplete(SwitchCamsToPeel);
+        slimeLid.transform.parent = null;
     }
-    public void SwitchCams() {
+    public void SwitchCamsToPeel() {
         vCamStart.Priority = 10;
         vCamLidPeeling.Priority = 20;
         tapeCanBePeeled = true;
@@ -61,12 +84,36 @@ public class Phase2 : MonoBehaviour
     public void FallOffTape() {
         slimeTape.transform.DOMove(tapePeeledPos.position, 1.5f).SetEase(Ease.Linear).OnComplete(DestroyTape);
         slimeTape.transform.DORotate(tapePeeledPos.eulerAngles, 1f);
+        boxCanBeTurnedOver = true;
     }
     public void TurnOverSlimeBox() {
-
+        SwitchCamsToPutDown();
+        slimeBox.transform.DORotate(slimeTurnOverPos.eulerAngles, 1f).OnComplete(EnableToPutDown);
+        boxTurnedOver = true;
+    }
+    public void EnableToPutDown() {
+        boxCanBePutDown = true;
+    }
+    public void SwitchCamsToPutDown() {
+        vCamLidPeeling.Priority = 10;
+        vCamBoxPutDown.Priority = 20;
+    }
+    public void PutDownSlimeBox() {
+        SwitchCamsToFinish();
+        slimeBox.transform.DOMove(slimePutDownPos.position, 0.5f);
+        boxPutDown = true;
+    }
+    public void SwitchCamsToFinish() {
+        vCamBoxPutDown.Priority = 10;
+        vCamFinish.Priority = 20;
     }
 
     void DestroyTape() {
         Destroy(slimeTape);
+    }
+
+    void StartPhase2() {
+        gameObject.SetActive(false);
+        phaseToActivate.SetActive(true);
     }
 }

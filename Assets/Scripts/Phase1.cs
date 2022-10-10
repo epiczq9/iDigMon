@@ -9,24 +9,26 @@ public class Phase1 : MonoBehaviour
     public GameObject plushie, slimeBox;
     public Transform slimeBoxOutPos, slimeBoxStraightPos, monSetAsidePos;
 
-    bool slimeActive = false;
+    bool slimeTakenOut = false;
+    bool slimeCanBeTakenOut = false;
 
     public GameObject phaseToActivate;
 
     public SwipeDetector swipeDet;
 
     private void Update() {
-        if(swipeDet.outputText.text == "UP" && slimeActive) {
-            TakeOutSlimeBox();
-        } else if (Input.GetAxis("Vertical") > 0 && slimeActive) {
-            TakeOutSlimeBox();
+        if(swipeDet.outputText.text == "UP" || Input.GetAxis("Vertical") > 0) {
+            if (!slimeTakenOut && slimeCanBeTakenOut) {
+                TakeOutSlimeBox();
+                slimeTakenOut = true;
+            }
         }
     }
 
     public void PlushieOpenMouth() {
         plushie.GetComponent<Plushie>().openMouthBool = true;
         slimeBox.transform.parent = null;
-        slimeActive = true;
+        slimeCanBeTakenOut = true;
     }
 
     public void TakeOutSlimeBox() {
