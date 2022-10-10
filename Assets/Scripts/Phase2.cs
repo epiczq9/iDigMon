@@ -22,6 +22,9 @@ public class Phase2 : MonoBehaviour
     public bool boxPutDown = false;
     public bool boxCanBePutDown = false;
 
+    int timesSmashed = 0;
+    public GameObject smashButton;
+
     public SwipeDetector swipeDet;
 
     public GameObject phaseToActivate;
@@ -59,17 +62,17 @@ public class Phase2 : MonoBehaviour
     }
     public void TakeOutTools() {
         tools.transform.parent = null;
-        tools.transform.DOMove(toolsOutPos.position, 1f).OnComplete(SetAsideTop1);
+        tools.transform.DOMove(toolsOutPos.position, 0.5f).OnComplete(SetAsideTop1);
     }
     public void SetAsideTop1() {
         slimeLid.transform.DOMove(lidSetAsidePos1.position, 1f);
         tools.transform.DOMove(toolsSetAsidePos1.position, 1f).OnComplete(SetAsideTop2);
     }
     public void SetAsideTop2() {
-        slimeLid.transform.DOMove(lidSetAsidePos2.position, 1f);
-        slimeLid.transform.DORotate(lidSetAsidePos2.eulerAngles, 1f);
-        tools.transform.DOMove(toolsSetAsidePos2.position, 1f);
-        tools.transform.DORotate(toolsSetAsidePos2.eulerAngles, 1f).OnComplete(SwitchCamsToPeel);
+        slimeLid.transform.DOMove(lidSetAsidePos2.position, 0.7f);
+        slimeLid.transform.DORotate(lidSetAsidePos2.eulerAngles, 0.7f);
+        tools.transform.DOMove(toolsSetAsidePos2.position, 0.7f);
+        tools.transform.DORotate(toolsSetAsidePos2.eulerAngles, 0.7f).OnComplete(SwitchCamsToPeel);
         slimeLid.transform.parent = null;
     }
     public void SwitchCamsToPeel() {
@@ -100,19 +103,33 @@ public class Phase2 : MonoBehaviour
     }
     public void PutDownSlimeBox() {
         SwitchCamsToFinish();
-        slimeBox.transform.DOMove(slimePutDownPos.position, 0.5f);
+        slimeBox.transform.DOMove(slimePutDownPos.position, 0.5f).OnComplete(ActivateSmashButton);
         boxPutDown = true;
     }
     public void SwitchCamsToFinish() {
         vCamBoxPutDown.Priority = 10;
         vCamFinish.Priority = 20;
     }
+    public void ActivateSmashButton() {
+        smashButton.SetActive(true);
+    }
+    public void SmashBoxOnTable() {
+        Sequence smashSequence = DOTween.Sequence();
+        smashSequence.Append(slimeBox.transform.DOMoveY(2.5f, 0.5f));
+        smashSequence.Append(slimeBox.transform.DOMoveY(2.26f, 0.07f).SetEase(Ease.OutQuad));
+        timesSmashed++;
 
+        if (timesSmashed == 3) {
+            smashButton.SetActive(false);
+            StartPhase3();
+        }
+    }
+    
     void DestroyTape() {
         Destroy(slimeTape);
     }
 
-    void StartPhase2() {
+    void StartPhase3() {
         gameObject.SetActive(false);
         phaseToActivate.SetActive(true);
     }
