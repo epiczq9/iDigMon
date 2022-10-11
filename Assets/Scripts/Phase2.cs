@@ -7,9 +7,11 @@ using Timers;
 
 public class Phase2 : MonoBehaviour
 {
-    public GameObject slimeBox, slimeLid, tools, slimeContainer, slime, slimeTape;
+    public GameObject slimeBox, slimeLid, tools, slimeContainer, slimes, slimeTape;
     public Transform lidRaisedPos, lidSetAsidePos1, lidSetAsidePos2, toolsOutPos, toolsSetAsidePos1, toolsSetAsidePos2,
         tapePeeledPos, slimeTurnOverPos, slimePutDownPos;
+    public Transform[] slimeSlamPos;
+    int currentSlamPos = 0;
     public CinemachineVirtualCamera vCamStart, vCamLidPeeling, vCamBoxPutDown, vCamFinish;
     public Animator tapeAnimator;
 
@@ -116,13 +118,17 @@ public class Phase2 : MonoBehaviour
     public void SmashBoxOnTable() {
         Sequence smashSequence = DOTween.Sequence();
         smashSequence.Append(slimeBox.transform.DOMoveY(2.5f, 0.5f));
-        smashSequence.Append(slimeBox.transform.DOMoveY(2.26f, 0.07f).SetEase(Ease.OutQuad));
+        smashSequence.Append(slimeBox.transform.DOMoveY(2.26f, 0.07f).SetEase(Ease.OutQuad).OnComplete(LowerSlime));
         timesSmashed++;
 
         if (timesSmashed == 3) {
             smashButton.SetActive(false);
             StartPhase3();
         }
+    }
+    public void LowerSlime() {
+        slimes.transform.DOMove(slimeSlamPos[currentSlamPos].position, 0.01f);
+        currentSlamPos++;
     }
     
     void DestroyTape() {
