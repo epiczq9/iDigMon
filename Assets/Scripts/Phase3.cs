@@ -11,6 +11,7 @@ public class Phase3 : MonoBehaviour
     public GameObject slimeContainer, slimeParent;
     public Transform slimeContainerLiftPos, slimeContainerSetAsidePos, slimeSetDownPos;
     public GameObject[] slimes;
+    public CinemachineVirtualCamera vCamStart, vCamPeelingSlime;
 
     public bool containerRaised = false;
     public bool containerCanBeRaised = false;
@@ -45,7 +46,12 @@ public class Phase3 : MonoBehaviour
     }
     public void SetDownSlime() {
         Destroy(slimeContainer);
+        SwitchCamsToPeelingSlime();
         slimeParent.transform.DOMove(slimeSetDownPos.position, 0.5f);
         slimeParent.transform.DORotateQuaternion(slimeSetDownPos.rotation, 0.5f);
+    }
+    public void SwitchCamsToPeelingSlime() {
+        vCamStart.Priority = 10;
+        vCamPeelingSlime.Priority = 20;
     }
 }
