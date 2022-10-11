@@ -60,7 +60,7 @@ MonoBehaviour:
   - m_From: VCamFinishPhase2
     m_To: VCamPeelingSlime
     m_Blend:
-      m_Style: 4
+      m_Style: 1
       m_Time: 1
       m_CustomCurve:
         serializedVersion: 2
