@@ -8,7 +8,7 @@ using Timers;
 
 public class Phase3 : MonoBehaviour
 {
-    public GameObject slimeContainer, slimeParent, peelingStick, peelPiecePrefab, pickingToolButton;
+    public GameObject slimeContainer, slimeParent, peelingStick, peelPiecePrefab, pickingToolButton, bag;
     public Transform slimeContainerLiftPos, slimeContainerSetAsidePos, slimeSetDownPos;
     public GameObject[] slimes;
     int currentPeel = 0;
@@ -83,6 +83,9 @@ public class Phase3 : MonoBehaviour
         Debug.Log(currentPeel);
         slimes[currentPeel + 1].SetActive(true);
         slimes[currentPeel].SetActive(false);
+        if(currentPeel == 4) {
+            bag.SetActive(true);
+        }
         peelingStick.transform.DOMove(peelingEndTransforms[currentPeel].position, 0.5f).OnComplete(RepositionPeelingStick);
         peelingStick.transform.DORotate(peelingEndTransforms[currentPeel].eulerAngles, 0.5f);
     }

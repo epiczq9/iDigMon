@@ -665,6 +665,39 @@ Canvas:
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_TargetDisplay: 0
+--- !u!1 &213659446
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 213659447}
+  m_Layer: 0
+  m_Name: Phase4Positions
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &213659447
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 213659446}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 1861902848}
+  - {fileID: 653761912}
+  - {fileID: 1167960301}
+  m_Father: {fileID: 506184028}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &231441851
 GameObject:
   m_ObjectHideFlags: 3
@@ -2006,6 +2039,7 @@ Transform:
   - {fileID: 906877774}
   - {fileID: 1780774854}
   - {fileID: 1673025420}
+  - {fileID: 213659447}
   m_Father: {fileID: 0}
   m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -2375,6 +2409,11 @@ MonoBehaviour:
         m_Calls: []
   m_LegacyBlendHint: 0
   m_ComponentOwner: {fileID: 1277830293}
+--- !u!1 &651204099 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7527180350975999501, guid: 50ef7a0e67effc1459984246c49bed8f, type: 3}
+  m_PrefabInstance: {fileID: 8348632619383826420}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &653260035
 GameObject:
   m_ObjectHideFlags: 0
@@ -2423,6 +2462,36 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &653761911
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 653761912}
+  m_Layer: 0
+  m_Name: SlimePartPos
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &653761912
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 653761911}
+  m_LocalRotation: {x: -0.7002253, y: 0.7002253, z: -0.09841031, w: 0.09841031}
+  m_LocalPosition: {x: 0.0145, y: 2.1, z: 0.467}
+  m_LocalScale: {x: 0.050000045, y: 0.050000053, z: 0.05000007}
+  m_Children: []
+  m_Father: {fileID: 213659447}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 164, z: -90}
 --- !u!1001 &656646960
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3321,6 +3390,11 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &874760192 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3924457853563423217, guid: 50ef7a0e67effc1459984246c49bed8f, type: 3}
+  m_PrefabInstance: {fileID: 8348632619383826420}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &888124351
 GameObject:
   m_ObjectHideFlags: 0
@@ -3836,6 +3910,7 @@ MonoBehaviour:
   peelingStick: {fileID: 1458120362}
   peelPiecePrefab: {fileID: 3186851748190056245, guid: ec06ed7d938941c4fbe2f069c4e09afd, type: 3}
   pickingToolButton: {fileID: 342331307}
+  bag: {fileID: 1343847638}
   slimeContainerLiftPos: {fileID: 706273924}
   slimeContainerSetAsidePos: {fileID: 1224940699}
   slimeSetDownPos: {fileID: 1399741267}
@@ -4093,7 +4168,7 @@ GameObject:
   - component: {fileID: 1136182643}
   - component: {fileID: 1136182642}
   m_Layer: 0
-  m_Name: PickTool
+  m_Name: PullBag
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4115,8 +4190,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -142, y: -38}
-  m_SizeDelta: {x: 171.62, y: 220.9}
+  m_AnchoredPosition: {x: -142, y: -66.9}
+  m_SizeDelta: {x: 171.62, y: 282.17}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1136182642
 MonoBehaviour:
@@ -4162,9 +4237,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: Phase3, Assembly-CSharp
-        m_MethodName: StartPeelingProcess
+      - m_Target: {fileID: 1657476840}
+        m_TargetAssemblyTypeName: Phase4, Assembly-CSharp
+        m_MethodName: PullOutBag
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -4455,6 +4530,36 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1167960300
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1167960301}
+  m_Layer: 0
+  m_Name: SlimePartPos2
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1167960301
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1167960300}
+  m_LocalRotation: {x: -0.6963643, y: 0.6963643, z: 0.12278774, w: -0.12278774}
+  m_LocalPosition: {x: 0.0235, y: 2.1, z: 0.805}
+  m_LocalScale: {x: 0.050000045, y: 0.050000053, z: 0.05000007}
+  m_Children: []
+  m_Father: {fileID: 213659447}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 200, z: -90}
 --- !u!1 &1177273754
 GameObject:
   m_ObjectHideFlags: 0
@@ -4826,6 +4931,11 @@ Transform:
   m_Father: {fileID: 1673025420}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 100, y: 3, z: 90}
+--- !u!1 &1343847638 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8267501381991504662, guid: 50ef7a0e67effc1459984246c49bed8f, type: 3}
+  m_PrefabInstance: {fileID: 8348632619383826420}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1383850900
 GameObject:
   m_ObjectHideFlags: 0
@@ -4916,6 +5026,11 @@ Transform:
   m_Father: {fileID: 1673025420}
   m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 100, y: 3, z: 90}
+--- !u!1 &1413821127 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7618587441734756955, guid: 50ef7a0e67effc1459984246c49bed8f, type: 3}
+  m_PrefabInstance: {fileID: 8348632619383826420}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1420487340
 GameObject:
   m_ObjectHideFlags: 0
@@ -5440,13 +5555,14 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1657476839}
+  - component: {fileID: 1657476840}
   m_Layer: 0
   m_Name: Phase4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1657476839
 Transform:
   m_ObjectHideFlags: 0
@@ -5462,6 +5578,26 @@ Transform:
   m_Father: {fileID: 872399160}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1657476840
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1657476838}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 51cdb83c0c2dcdc45bf162718354419d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bag: {fileID: 1343847638}
+  slimeFull: {fileID: 8348632619383826421}
+  slimeHalfed: {fileID: 651204099}
+  slimeHalf1: {fileID: 1413821127}
+  slimeHalf2: {fileID: 874760192}
+  bagPulledTran: {fileID: 1861902848}
+  slimeHalfTran1: {fileID: 653761912}
+  slimeHalfTran2: {fileID: 1167960301}
 --- !u!1 &1673025419
 GameObject:
   m_ObjectHideFlags: 0
@@ -6007,6 +6143,36 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1861902847
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1861902848}
+  m_Layer: 0
+  m_Name: BagPulledPos
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1861902848
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1861902847}
+  m_LocalRotation: {x: -0.73904353, y: 0, z: 0, w: 0.67365766}
+  m_LocalPosition: {x: -0.025, y: 2.277, z: 0.635}
+  m_LocalScale: {x: 0.050000045, y: 0.050000053, z: 0.05000007}
+  m_Children: []
+  m_Father: {fileID: 213659447}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: -95.3, y: 0, z: 0}
 --- !u!1 &1940518800
 GameObject:
   m_ObjectHideFlags: 0
