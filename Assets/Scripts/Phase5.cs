@@ -77,7 +77,7 @@ public class Phase5 : MonoBehaviour
         //SwitchCamsForPainting(vCamsPainting[3], vCamsPainting[4]);
     }
     public void FinishedPainting() {
-        
+        ActivatePhase6();
     }
     public void ActivatePhase6() {
         gameObject.SetActive(false);

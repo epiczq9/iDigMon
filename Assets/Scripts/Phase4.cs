@@ -8,7 +8,7 @@ using Timers;
 
 public class Phase4 : MonoBehaviour
 {
-    public GameObject bag, slimeFull, slimeHalfed, slimeHalf1, slimeHalf2, doll1, doll2;
+    public GameObject bag, slimeFull, slimeHalfed, slimeHalf1, slimeHalf2, doll1, doll2, bagPullOutButton;
     public Transform bagPulledTran, slimeHalfTran1, slimeHalfTran2, bagOpeningTran, dollInBagTran, dollPullOutTran, bagSetAsideTran;
     public CinemachineVirtualCamera vCamStart, vCamBagOpening, vCamDollZoomIn;
     public int swipeCounter1 = 0, swipeCounter2 = 0;
@@ -73,6 +73,7 @@ public class Phase4 : MonoBehaviour
         } else if (swipeCounter2 == 1) {
             slimeHalf2.GetComponent<MeltSlime>().doSecondSwipe = true;
             slime2CanBeMelted = false;
+            bagPullOutButton.SetActive(true);
         }
     }
 
@@ -84,7 +85,7 @@ public class Phase4 : MonoBehaviour
         //slimeHalf1.transform.parent = null;
         //slimeHalf2.transform.parent = null;
         bag.transform.DOMove(bagPulledTran.position, 0.75f);
-        bag.transform.DORotate(bagPulledTran.eulerAngles, 0.75f);
+        bag.transform.DORotate(bagPulledTran.eulerAngles, 0.75f).OnComplete(PositionBagForOpening);
         /*
         slimeHalf1.transform.DOMove(slimeHalfTran1.position, 0.75f);
         slimeHalf1.transform.DORotate(slimeHalfTran1.eulerAngles, 0.75f);

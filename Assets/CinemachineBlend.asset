@@ -13,6 +13,17 @@ MonoBehaviour:
   m_Name: CinemachineBlend
   m_EditorClassIdentifier: 
   m_CustomBlends:
+  - m_From: VCamDollZoomInStart
+    m_To: VCam Start
+    m_Blend:
+      m_Style: 0
+      m_Time: 0.001
+      m_CustomCurve:
+        serializedVersion: 2
+        m_Curve: []
+        m_PreInfinity: 0
+        m_PostInfinity: 0
+        m_RotationOrder: 0
   - m_From: VCam Start
     m_To: VCam1
     m_Blend:
@@ -102,21 +113,10 @@ MonoBehaviour:
         m_PostInfinity: 0
         m_RotationOrder: 0
   - m_From: VCamBagOpening
-    m_To: VCamDollZoomIn
+    m_To: VCamBody
     m_Blend:
       m_Style: 1
-      m_Time: 1
-      m_CustomCurve:
-        serializedVersion: 2
-        m_Curve: []
-        m_PreInfinity: 0
-        m_PostInfinity: 0
-        m_RotationOrder: 0
-  - m_From: VCamDollZoomInStart
-    m_To: VCam Start
-    m_Blend:
-      m_Style: 0
-      m_Time: 0.001
+      m_Time: 0.75
       m_CustomCurve:
         serializedVersion: 2
         m_Curve: []
