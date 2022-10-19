@@ -92,8 +92,8 @@ public class Phase3 : MonoBehaviour
     public void RepositionPeelingStick() {
         currentPeel++;
         if (currentPeel <= 4) {
-            peelingStick.transform.DOMove(peelingStartTransforms[currentPeel].position, 0.8f).OnComplete(SlimeCanBePeeled);
-            peelingStick.transform.DORotate(peelingStartTransforms[currentPeel].eulerAngles, 0.8f);
+            peelingStick.transform.DOMove(peelingStartTransforms[currentPeel].position, 0.4f).OnComplete(SlimeCanBePeeled);
+            peelingStick.transform.DORotate(peelingStartTransforms[currentPeel].eulerAngles, 0.4f);
         } else {
             peelingStick.transform.DOMove(peelingFinishTransform.position, 0.5f);
             peelingStick.transform.DORotate(peelingFinishTransform.eulerAngles, 0.5f).OnComplete(ActivatePhase4);
@@ -107,7 +107,7 @@ public class Phase3 : MonoBehaviour
         vCamPullingBag.Priority = 20;
     }
     public void ActivatePhase4() {
-        SwitchCamsToRemovingBag();
+        //SwitchCamsToRemovingBag();
         gameObject.SetActive(false);
         phaseToActivate.SetActive(true);
     }

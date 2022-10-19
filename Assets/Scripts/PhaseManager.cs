@@ -13,7 +13,7 @@ public class PhaseManager : MonoBehaviour
     public GameObject box;
 
     public GameObject cinemachineMNGR;
-    public CinemachineVirtualCamera vcam1, vcam2;
+    public CinemachineVirtualCamera vcam0, vcam1, vcam2;
 
     public GameObject[] buttons;
 
@@ -22,7 +22,8 @@ public class PhaseManager : MonoBehaviour
     public SwipeDetector swipeDet;
 
     void Start() {
-      
+        vcam0.Priority = 10;
+        vcam1.Priority = 20;
     }
 
     // Update is called once per frame
