@@ -30,19 +30,19 @@ public class Phase5 : MonoBehaviour
         Debug.Log(GetPercentPainted());
     }
     public void ButtonActivation() {
-        if (35 <= GetPercentPainted() && !armButtonActivated) {
+        if (35.5f <= GetPercentPainted() && !armButtonActivated) {
             nextMaskButtons[0].SetActive(true);
             armButtonActivated = true;
-        } else if (40 <= GetPercentPainted() && !earsButtonActivated) {
+        } else if (41.5f <= GetPercentPainted() && !earsButtonActivated) {
             nextMaskButtons[1].SetActive(true);
             earsButtonActivated = true;
-        } else if (47 <= GetPercentPainted() && !legsButtonActivated) {
+        } else if (48f <= GetPercentPainted() && !legsButtonActivated) {
             nextMaskButtons[2].SetActive(true);
             legsButtonActivated = true;
-        } else if (55 <= GetPercentPainted() && !faceButtonActivated) {
+        } else if (56f <= GetPercentPainted() && !faceButtonActivated) {
             nextMaskButtons[3].SetActive(true);
             faceButtonActivated = true;
-        } else if (58 <= GetPercentPainted() && !finishedButtonActivated) {
+        } else if (59f <= GetPercentPainted() && !finishedButtonActivated) {
             nextMaskButtons[4].SetActive(true);
             finishedButtonActivated = true;
         }
