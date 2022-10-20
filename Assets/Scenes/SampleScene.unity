@@ -5964,7 +5964,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &653260036
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9223,8 +9223,8 @@ MonoBehaviour:
   plushie: {fileID: 919132147484024634}
   handFeet: {fileID: 5074040483953671807}
   ears: {fileID: 630996610}
-  monPos: {fileID: 423612504}
-  boxPos: {fileID: 827482134}
+  monPos: {fileID: 720386264}
+  boxPos: {fileID: 392292350}
   door: {fileID: 1598427654}
   box: {fileID: 1598427655}
   cinemachineMNGR: {fileID: 533368339}
@@ -9927,8 +9927,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 180752872}
-        m_TargetAssemblyTypeName: OpeningAnimation, Assembly-CSharp
+      - m_Target: {fileID: 888124353}
+        m_TargetAssemblyTypeName: Phase0, Assembly-CSharp
         m_MethodName: OpenBox
         m_Mode: 1
         m_Arguments:
@@ -13949,8 +13949,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 180752872}
-        m_TargetAssemblyTypeName: OpeningAnimation, Assembly-CSharp
+      - m_Target: {fileID: 888124353}
+        m_TargetAssemblyTypeName: Phase0, Assembly-CSharp
         m_MethodName: TakeOutPlushie
         m_Mode: 1
         m_Arguments:
@@ -13961,8 +13961,8 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 180752872}
-        m_TargetAssemblyTypeName: OpeningAnimation, Assembly-CSharp
+      - m_Target: {fileID: 888124353}
+        m_TargetAssemblyTypeName: Phase0, Assembly-CSharp
         m_MethodName: Unfold
         m_Mode: 1
         m_Arguments:
@@ -15182,7 +15182,7 @@ MonoBehaviour:
   storeStates: 0
   showPreview: 0
   priority: 0
-  frequency: 0
+  frequency: 4
   interval: 10
   connector:
     hitSpacing: 0
