@@ -42,7 +42,7 @@ public class Phase5 : MonoBehaviour
         } else if (55 <= GetPercentPainted() && !faceButtonActivated) {
             nextMaskButtons[3].SetActive(true);
             faceButtonActivated = true;
-        } else if (59 <= GetPercentPainted() && !finishedButtonActivated) {
+        } else if (58 <= GetPercentPainted() && !finishedButtonActivated) {
             nextMaskButtons[4].SetActive(true);
             finishedButtonActivated = true;
         }
