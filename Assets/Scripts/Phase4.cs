@@ -118,7 +118,7 @@ public class Phase4 : MonoBehaviour
     }
     public void BagSetAside() {
         SwitchCamsToDollZoomIn();
-        bag.transform.DOMove(bagSetAsideTran.position, 1.5f).OnComplete(ActivatePhase5);
+        bag.transform.DOMove(bagSetAsideTran.position, 0.75f).OnComplete(ActivatePhase5);
     }
     public void SwitchCamsToDollZoomIn() {
         vCamBagOpening.Priority = 10;
