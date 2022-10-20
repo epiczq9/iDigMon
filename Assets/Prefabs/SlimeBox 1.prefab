@@ -927,6 +927,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6317578925029434746, guid: a9f90132c1d2e1444be368495bb38d8d, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: e71c0ba21a9a5674aa757be09d51b832, type: 2}
     - target: {fileID: 8003028576119023140, guid: a9f90132c1d2e1444be368495bb38d8d, type: 3}
       propertyPath: m_DirtyAABB
       value: 0
@@ -955,6 +959,10 @@ PrefabInstance:
       propertyPath: m_AABB.m_Extent.z
       value: 33.095604
       objectReference: {fileID: 0}
+    - target: {fileID: 8003028576119023140, guid: a9f90132c1d2e1444be368495bb38d8d, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: e71c0ba21a9a5674aa757be09d51b832, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a9f90132c1d2e1444be368495bb38d8d, type: 3}
 --- !u!4 &3326173536161712120 stripped
@@ -1679,7 +1687,11 @@ PrefabInstance:
     - target: {fileID: -7511558181221131132, guid: 859a2b3fe8eb7d24684c1a153fbbb263, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: e147544921693cf498588415f6c26b26, type: 2}
+      objectReference: {fileID: 2100000, guid: e71c0ba21a9a5674aa757be09d51b832, type: 2}
+    - target: {fileID: -7511558181221131132, guid: 859a2b3fe8eb7d24684c1a153fbbb263, type: 3}
+      propertyPath: m_Materials.Array.data[1]
+      value: 
+      objectReference: {fileID: 2100000, guid: e71c0ba21a9a5674aa757be09d51b832, type: 2}
     - target: {fileID: 919132149155446097, guid: 859a2b3fe8eb7d24684c1a153fbbb263, type: 3}
       propertyPath: m_Name
       value: PeelingStickMid
@@ -1975,7 +1987,7 @@ PrefabInstance:
     - target: {fileID: 414256843832668261, guid: 9cbc4eaee0d17c34299812d1e176984a, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: 183722f9c1045fc4d9fbcdd431174e3e, type: 2}
+      objectReference: {fileID: 2100000, guid: 49ddec5968958d542a0ab971681a5bb5, type: 2}
     - target: {fileID: 919132149155446097, guid: 9cbc4eaee0d17c34299812d1e176984a, type: 3}
       propertyPath: m_Name
       value: Tape
