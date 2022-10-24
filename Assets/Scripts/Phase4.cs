@@ -9,6 +9,10 @@ using Timers;
 public class Phase4 : MonoBehaviour
 {
     public GameObject bag, slimeFull, slimeHalfed, slimeHalf1, slimeHalf2, doll1, doll2, bagPullOutButton;
+    public GameObject uiLRUpper;
+    public GameObject uiLRLower;
+    public GameObject uiSwipeRight;
+    public GameObject uiSwipeUp;
     public Transform bagPulledTran, slimeHalfTran1, slimeHalfTran2, bagOpeningTran, dollInBagTran, dollPullOutTran, bagSetAsideTran;
     public CinemachineVirtualCamera vCamStart, vCamBagOpening, vCamDollZoomIn;
     public int swipeCounter1 = 0, swipeCounter2 = 0;
@@ -62,6 +66,9 @@ public class Phase4 : MonoBehaviour
         } else if (swipeCounter1 == 1) {
             slimeHalf1.GetComponent<MeltSlime>().doSecondSwipe = true;
 
+            uiLRUpper.SetActive(false);
+            uiLRLower.SetActive(true);
+
             slime2CanBeMelted = true;
             slime1CanBeMelted = false;
         }
@@ -73,6 +80,7 @@ public class Phase4 : MonoBehaviour
         } else if (swipeCounter2 == 1) {
             slimeHalf2.GetComponent<MeltSlime>().doSecondSwipe = true;
             slime2CanBeMelted = false;
+            uiLRLower.SetActive(false);
             bagPullOutButton.SetActive(true);
         }
     }
@@ -104,12 +112,17 @@ public class Phase4 : MonoBehaviour
     }
     public void EnableBagOpening() {
         bagCanBeOpened = true;
+        uiSwipeRight.SetActive(true);
         //doll.transform.position = dollInBagTran.position;
         //doll.transform.rotation = dollInBagTran.rotation;
     }
     public void OpenBag() {
         bag.GetComponent<Animator>().Play("OpenBag");
+        TimersManager.SetTimer(this, 0.5f, EnableDollTakeOut);
+    }
+    public void EnableDollTakeOut() {
         bagOpened = true;
+        uiSwipeUp.SetActive(true);
     }
     public void PullOutDoll() {
         doll1.transform.parent = null;
