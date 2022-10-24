@@ -16,6 +16,7 @@ public class Phase5 : MonoBehaviour
 
     public GameObject phaseToActivate;
     void Start() {
+        ActivateBodyPainting();
     }
 
     // Update is called once per frame

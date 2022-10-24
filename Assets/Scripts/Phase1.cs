@@ -6,7 +6,7 @@ using Cinemachine;
 
 public class Phase1 : MonoBehaviour
 {
-    public GameObject plushie, slimeBox;
+    public GameObject plushie, slimeBox, UIButton;
     public Transform slimeBoxOutPos, slimeBoxStraightPos, monSetAsidePos;
 
     bool slimeTakenOut = false;
@@ -28,7 +28,13 @@ public class Phase1 : MonoBehaviour
     public void PlushieOpenMouth() {
         plushie.GetComponent<Plushie>().openMouthBool = true;
         slimeBox.transform.parent = null;
+        //slimeCanBeTakenOut = true;
+        Timers.TimersManager.SetTimer(this, 1f, EnableSlimePullOut);
+    }
+
+    public void EnableSlimePullOut() {
         slimeCanBeTakenOut = true;
+        UIButton.SetActive(true);
     }
 
     public void TakeOutSlimeBox() {

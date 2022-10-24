@@ -8,6 +8,7 @@ using Timers;
 public class Phase2 : MonoBehaviour
 {
     public GameObject slimeBox, slimeLid, tools, slimeContainer, slimes, slimeTape;
+    public GameObject uiUp, uiLeft, uiDown, uiTap;
     public Transform lidRaisedPos, lidSetAsidePos1, lidSetAsidePos2, toolsOutPos, toolsSetAsidePos1, toolsSetAsidePos2,
         tapePeeledPos, slimeTurnOverPos, slimePutDownPos;
     public Transform[] slimeSlamPos;
@@ -81,6 +82,7 @@ public class Phase2 : MonoBehaviour
         vCamStart.Priority = 10;
         vCamLidPeeling.Priority = 20;
         tapeCanBePeeled = true;
+        uiLeft.SetActive(true);
     }
     public void PeelOffTape() {
         tapeAnimator.Play("PeelTape");
@@ -90,6 +92,7 @@ public class Phase2 : MonoBehaviour
         slimeTape.transform.DOMove(tapePeeledPos.position, 1.5f).SetEase(Ease.Linear).OnComplete(DestroyTape);
         slimeTape.transform.DORotate(tapePeeledPos.eulerAngles, 1f);
         boxCanBeTurnedOver = true;
+        uiDown.SetActive(true);
     }
     public void TurnOverSlimeBox() {
         SwitchCamsToPutDown();
@@ -98,6 +101,7 @@ public class Phase2 : MonoBehaviour
     }
     public void EnableToPutDown() {
         boxCanBePutDown = true;
+        uiDown.SetActive(true);
     }
     public void SwitchCamsToPutDown() {
         vCamLidPeeling.Priority = 10;
@@ -116,19 +120,30 @@ public class Phase2 : MonoBehaviour
         smashButton.SetActive(true);
     }
     public void SmashBoxOnTable() {
+        smashButton.SetActive(false);
         Sequence smashSequence = DOTween.Sequence();
         smashSequence.Append(slimeBox.transform.DOMoveY(2.5f, 0.5f));
         smashSequence.Append(slimeBox.transform.DOMoveY(2.26f, 0.07f).SetEase(Ease.OutQuad).OnComplete(LowerSlime));
         timesSmashed++;
-
+        /*
         if (timesSmashed == 3) {
             smashButton.SetActive(false);
             StartPhase3();
+        } else {
+            smashButton.SetActive(true);
         }
+        */
     }
     public void LowerSlime() {
         slimes.transform.DOMove(slimeSlamPos[currentSlamPos].position, 0.01f);
         currentSlamPos++;
+
+        if (timesSmashed == 3) {
+            smashButton.SetActive(false);
+            StartPhase3();
+        } else {
+            smashButton.SetActive(true);
+        }
     }
     
     void DestroyTape() {

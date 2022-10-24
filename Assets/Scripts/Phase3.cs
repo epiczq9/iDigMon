@@ -8,8 +8,21 @@ using Timers;
 
 public class Phase3 : MonoBehaviour
 {
-    public GameObject slimeContainer, slimeParent, peelingStick, peelPiecePrefab, pickingToolButton, bag;
+    [Header("Objects")]
+    public GameObject slimeContainer;
+    public GameObject slimeParent;
+    public GameObject peelingStick;
+    public GameObject peelPiecePrefab;
+    public GameObject pickingToolButton;
+    public GameObject bag;
+    [Header("UI Elements")]
+    public GameObject uiUp;
+    public GameObject uiLeft;
+    public GameObject uiDown;
+    public GameObject uiTap;
+    [Header("Transforms")]
     public Transform slimeContainerLiftPos, slimeContainerSetAsidePos, slimeSetDownPos;
+    [Header("Others")]
     public GameObject[] slimes;
     int currentPeel = 0;
     public Transform[] peelingStartTransforms;
@@ -101,6 +114,7 @@ public class Phase3 : MonoBehaviour
     }
     public void SlimeCanBePeeled() {
         slimeCanBePeeled = true;
+        uiDown.SetActive(true);
     }
     public void SwitchCamsToRemovingBag() {
         vCamPeelingSlime.Priority = 10;
