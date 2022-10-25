@@ -44,9 +44,12 @@ public class Phase1 : MonoBehaviour
     public void StraightSlimeBox() {
         slimeBox.transform.DOMove(slimeBoxStraightPos.position, 1f);
         slimeBox.transform.DORotate(slimeBoxStraightPos.eulerAngles, 1f).OnComplete(StartPhase2);
-        plushie.transform.DOMove(monSetAsidePos.position, 1f);
+        plushie.transform.DOMove(monSetAsidePos.position, 1f).OnComplete(DestroyPlushie);
     }
 
+    public void DestroyPlushie() {
+        Destroy(plushie);
+    }
     void StartPhase2() {
         gameObject.SetActive(false);
         phaseToActivate.SetActive(true);
