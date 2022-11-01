@@ -22,11 +22,17 @@ public class Phase1 : MonoBehaviour
                 TakeOutSlimeBox();
                 slimeTakenOut = true;
             }
+            swipeDet.outputText.text = "EMPTY";
         }
     }
 
     public void PlushieOpenMouth() {
-        plushie.GetComponent<Plushie>().openMouthBool = true;
+        if(plushie.GetComponent<Plushie>() != null) {
+            plushie.GetComponent<Plushie>().openMouthBool = true;
+        } else {
+            plushie.GetComponent<PlushieDragon>().openMouthBool = true;
+        }
+        
         slimeBox.transform.parent = null;
         //slimeCanBeTakenOut = true;
         Timers.TimersManager.SetTimer(this, 1f, EnableSlimePullOut);
