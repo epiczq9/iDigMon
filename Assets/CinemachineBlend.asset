@@ -36,7 +36,7 @@ MonoBehaviour:
         m_PostInfinity: 0
         m_RotationOrder: 0
   - m_From: VCam1
-    m_To: VCamPeelingTape
+    m_To: VCamSmashingEgg
     m_Blend:
       m_Style: 1
       m_Time: 1
@@ -46,7 +46,7 @@ MonoBehaviour:
         m_PreInfinity: 0
         m_PostInfinity: 0
         m_RotationOrder: 0
-  - m_From: VCamPeelingTape
+  - m_From: VCamSmashingEgg
     m_To: VCamBoxSetDown
     m_Blend:
       m_Style: 1
@@ -91,10 +91,10 @@ MonoBehaviour:
         m_PostInfinity: 0
         m_RotationOrder: 0
   - m_From: VCamPeelingSlime
-    m_To: VCamBagOpening
+    m_To: VCamPullingDoll
     m_Blend:
       m_Style: 1
-      m_Time: 0.5
+      m_Time: 0.75
       m_CustomCurve:
         serializedVersion: 2
         m_Curve: []

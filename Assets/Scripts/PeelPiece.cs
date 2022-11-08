@@ -11,7 +11,7 @@ public class PeelPiece : MonoBehaviour
     }
     void MovePeelPiece() {
         transform.parent = null;
-        transform.DOMoveZ(-0.05f, 2f).OnComplete(DestroyPiece);
+        transform.DOMoveY(3.281f, 2f).OnComplete(DestroyPiece);
     }
     void DestroyPiece() {
         Destroy(gameObject);

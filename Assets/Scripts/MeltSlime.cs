@@ -6,9 +6,9 @@ public class MeltSlime : MonoBehaviour
 {
     public GameObject blendGO;
     SkinnedMeshRenderer smr;
-    private readonly float blendMax = 100f;
+    private readonly float blendMax = 50f;
     public float blendCurrent1 = 0, blendCurrent2 = 0;
-    public float blendSpeed = 200f;
+    public float blendSpeed = 100f;
     public bool doFirstSwipe = false, doSecondSwipe = false;
     int blendCount;
     void Start() {
