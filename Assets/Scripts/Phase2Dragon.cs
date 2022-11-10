@@ -99,7 +99,7 @@ public class Phase2Dragon : MonoBehaviour
     }
 
     public void RaiseTop() {
-        eggShellTop.transform.DOMove(eggShellTopPos.position, 1f).OnComplete(EnableBottomLowering);
+        eggShellTop.transform.DOMove(eggShellTopPos.position, 0.6f).OnComplete(EnableBottomLowering);
         eggshellTopRaised = true;
     }
     public void EnableBottomLowering() {
@@ -107,7 +107,7 @@ public class Phase2Dragon : MonoBehaviour
         eggshellBottomCanBeLowered = true;
     }
     public void LowerBottom() {
-        eggShellBottom.transform.DOMove(eggShellBottomPos.position, 1f).OnComplete(StartPhase3);
+        eggShellBottom.transform.DOMove(eggShellBottomPos.position, 0.6f).OnComplete(StartPhase3);
         eggshellBottomLowered = true;
     }
     void StartPhase3() {

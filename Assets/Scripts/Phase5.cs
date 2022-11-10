@@ -7,7 +7,7 @@ using DG.Tweening;
 
 public class Phase5 : MonoBehaviour
 {
-    public GameObject doll, paintBrush, mirror;
+    public GameObject doll, paintBrush, middleMirror, hornsMirror;
     public PaintIn3D.P3dChangeCounter changeCounter;
     public GameObject[] nextMaskButtons, masks;
     public Transform frontView, sideView;
@@ -24,6 +24,8 @@ public class Phase5 : MonoBehaviour
     void Start() {
         //ActivateBodyPainting();
         ActivateNextMaskButtonTimer();
+        SwitchToSideView();
+        ActivateMiddleMirror();
     }
 
     // Update is called once per frame
@@ -34,11 +36,17 @@ public class Phase5 : MonoBehaviour
         }
     }
 
-    public void ActivateMirror() {
-        mirror.SetActive(true);
+    public void ActivateMiddleMirror() {
+        middleMirror.SetActive(true);
     }
-    public void DeactivateMirror() {
-        mirror.SetActive(false);
+    public void DeactivateMiddleMirror() {
+        middleMirror.SetActive(false);
+    }
+    public void ActivateHornsMirror() {
+        hornsMirror.SetActive(true);
+    }
+    public void DeactivateHornsMirror() {
+        hornsMirror.SetActive(false);
     }
     public int GetPercentPainted() {
         return (int)(changeCounter.Ratio * 100);
@@ -61,7 +69,6 @@ public class Phase5 : MonoBehaviour
         doll.transform.DORotate(frontView.eulerAngles, 0.3f);
     }
     public void ButtonActivation() {
-        DebugPercent();
         /*
         currentRatio = GetPercentPainted();
         if (currentRatio > 0 && !armButtonActivated) {
