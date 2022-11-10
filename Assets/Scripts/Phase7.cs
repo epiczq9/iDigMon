@@ -23,8 +23,8 @@ public class Phase7 : MonoBehaviour
 
     public void TwistDoll() {
         Sequence twistSequence = DOTween.Sequence();
-        twistSequence.Append(doll.transform.DORotate(new Vector3(275.248901f, 178.507416f, 266.57f), 1f).SetEase(Ease.InQuint));
-        twistSequence.Append(doll.transform.DORotate(new Vector3(275.248901f, 178.507416f, 446.57f), 0.75f).SetEase(Ease.OutQuint)).OnComplete(PutOverShelf);
+        twistSequence.Append(doll.transform.DORotate(new Vector3(270, -360, 0), 1f).SetEase(Ease.InQuint));
+        twistSequence.Append(doll.transform.DORotate(new Vector3(270, -180, 0), 0.75f).SetEase(Ease.OutQuint)).OnComplete(PutOverShelf);
     }
 
     public void PutOverShelf() {
