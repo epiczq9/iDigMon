@@ -61,8 +61,8 @@ public class Phase4Dragon : MonoBehaviour
         } else if (swipeCounter1 == 1) {
             slimeHalf1.GetComponent<MeltSlime>().doSecondSwipe = true;
 
-            uiLRUpper.SetActive(false);
-            uiLRLower.SetActive(true);
+            //uiLRUpper.SetActive(false);
+            //uiLRLower.SetActive(true);
 
             slime2CanBeMelted = true;
             slime1CanBeMelted = false;
