@@ -63,9 +63,11 @@ public class Phase5 : MonoBehaviour
         currentMask++;
     }
     public void SwitchToSideView() {
+        doll.transform.DOMove(sideView.position, 0.3f);
         doll.transform.DORotate(sideView.eulerAngles, 0.3f);
     }
     public void SwitchToFrontView() {
+        doll.transform.DOMove(frontView.position, 0.3f);
         doll.transform.DORotate(frontView.eulerAngles, 0.3f);
     }
     public void ButtonActivation() {

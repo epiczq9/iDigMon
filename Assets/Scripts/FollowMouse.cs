@@ -11,7 +11,7 @@ public class FollowMouse : MonoBehaviour
     public float yOffset = 0.1f;
 
     Vector3 brushRotateOld = new Vector3(0, 90, 100);
-    Vector3 brushRotateNew = new Vector3(0, 90, 120);
+    Vector3 brushRotateNew = new Vector3(0, 90, 140);
 
     Sequence brushSequence;
     void Start() {
@@ -32,11 +32,11 @@ public class FollowMouse : MonoBehaviour
     }
 
     void RotateForward() {
-        transform.transform.DORotate(brushRotateNew, 0.3f).OnComplete(RotateBackwards);
+        transform.transform.DORotate(brushRotateNew, 0.1f).OnComplete(RotateBackwards);
     }
 
     void RotateBackwards() {
-        transform.transform.DORotate(brushRotateOld, 0.3f).OnComplete(CheckButton);
+        transform.transform.DORotate(brushRotateOld, 0.1f).OnComplete(CheckButton);
     }
 
     void CheckButton() {
