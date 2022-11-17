@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 2138677392}
-  m_IndirectSpecularColor: {r: 0.23108153, g: 0.6040589, b: 0.9881505, a: 1}
+  m_IndirectSpecularColor: {r: 0.23108155, g: 0.60405886, b: 0.9881505, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -5029,23 +5029,23 @@ PrefabInstance:
     - target: {fileID: -1868855958138098784, guid: 4b61d29c192980245a7be6350954f67b, type: 3}
       propertyPath: m_Materials.Array.data[1]
       value: 
-      objectReference: {fileID: 2100000, guid: 5abb738659a5c9944b4e0183c18b253a, type: 2}
+      objectReference: {fileID: 2100000, guid: 962b247016b5b69468aae08ca9956f5c, type: 2}
     - target: {fileID: -1868855958138098784, guid: 4b61d29c192980245a7be6350954f67b, type: 3}
       propertyPath: m_Materials.Array.data[2]
       value: 
-      objectReference: {fileID: 2100000, guid: 954fa09bd56d1654c95c52b8689715cc, type: 2}
+      objectReference: {fileID: 2100000, guid: 70232470e547d744b92eb6142aab9a19, type: 2}
     - target: {fileID: -1868855958138098784, guid: 4b61d29c192980245a7be6350954f67b, type: 3}
       propertyPath: m_Materials.Array.data[3]
       value: 
-      objectReference: {fileID: 2100000, guid: 5abb738659a5c9944b4e0183c18b253a, type: 2}
+      objectReference: {fileID: 2100000, guid: 962b247016b5b69468aae08ca9956f5c, type: 2}
     - target: {fileID: -1868855958138098784, guid: 4b61d29c192980245a7be6350954f67b, type: 3}
       propertyPath: m_Materials.Array.data[4]
       value: 
-      objectReference: {fileID: 2100000, guid: 954fa09bd56d1654c95c52b8689715cc, type: 2}
+      objectReference: {fileID: 2100000, guid: 5abb738659a5c9944b4e0183c18b253a, type: 2}
     - target: {fileID: -1868855958138098784, guid: 4b61d29c192980245a7be6350954f67b, type: 3}
       propertyPath: m_Materials.Array.data[5]
       value: 
-      objectReference: {fileID: 2100000, guid: 5abb738659a5c9944b4e0183c18b253a, type: 2}
+      objectReference: {fileID: 2100000, guid: 962b247016b5b69468aae08ca9956f5c, type: 2}
     - target: {fileID: -1868855958138098784, guid: 4b61d29c192980245a7be6350954f67b, type: 3}
       propertyPath: m_BlendShapeWeights.Array.size
       value: 2
@@ -5089,7 +5089,7 @@ PrefabInstance:
     - target: {fileID: -1686998382818614304, guid: 4b61d29c192980245a7be6350954f67b, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: 954fa09bd56d1654c95c52b8689715cc, type: 2}
+      objectReference: {fileID: 2100000, guid: 5abb738659a5c9944b4e0183c18b253a, type: 2}
     - target: {fileID: -1686998382818614304, guid: 4b61d29c192980245a7be6350954f67b, type: 3}
       propertyPath: m_BlendShapeWeights.Array.size
       value: 1
@@ -5129,11 +5129,11 @@ PrefabInstance:
     - target: {fileID: 49295720041757856, guid: 4b61d29c192980245a7be6350954f67b, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: 954fa09bd56d1654c95c52b8689715cc, type: 2}
+      objectReference: {fileID: 2100000, guid: 5abb738659a5c9944b4e0183c18b253a, type: 2}
     - target: {fileID: 49295720041757856, guid: 4b61d29c192980245a7be6350954f67b, type: 3}
       propertyPath: m_Materials.Array.data[1]
       value: 
-      objectReference: {fileID: 2100000, guid: 5abb738659a5c9944b4e0183c18b253a, type: 2}
+      objectReference: {fileID: 2100000, guid: 962b247016b5b69468aae08ca9956f5c, type: 2}
     - target: {fileID: 49295720041757856, guid: 4b61d29c192980245a7be6350954f67b, type: 3}
       propertyPath: m_BlendShapeWeights.Array.size
       value: 1
@@ -5153,7 +5153,7 @@ PrefabInstance:
     - target: {fileID: 8567717000986892130, guid: 4b61d29c192980245a7be6350954f67b, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: 954fa09bd56d1654c95c52b8689715cc, type: 2}
+      objectReference: {fileID: 2100000, guid: 5abb738659a5c9944b4e0183c18b253a, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4b61d29c192980245a7be6350954f67b, type: 3}
 --- !u!1 &463561593 stripped
