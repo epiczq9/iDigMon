@@ -18484,6 +18484,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   doll: {fileID: 8348632619383826426}
   paintBrush: {fileID: 99195773}
+  middleMirror: {fileID: 0}
+  hornsMirror: {fileID: 0}
   changeCounter: {fileID: 8348632619383826428}
   nextMaskButtons:
   - {fileID: 1208945779}
@@ -18497,6 +18499,11 @@ MonoBehaviour:
   - {fileID: 1643840983}
   - {fileID: 2036848122}
   - {fileID: 2097716887}
+  frontView: {fileID: 0}
+  sideView: {fileID: 0}
+  currentMask: 0
+  currentRatio: 0
+  oldRatio: 0
   armButtonActivated: 0
   earsButtonActivated: 0
   legsButtonActivated: 0

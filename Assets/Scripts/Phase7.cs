@@ -17,6 +17,8 @@ public class Phase7 : MonoBehaviour
     public CinemachineVirtualCamera vCamShelf;
     public CinemachineVirtualCamera vCamZoomOut;
 
+    public GameController gameController;
+
     private void Start() {
         TwistDoll();
     }
@@ -44,9 +46,14 @@ public class Phase7 : MonoBehaviour
     public void SwitchCamsToZoomOut() {
         vCamShelf.Priority = 10;
         vCamZoomOut.Priority = 20;
+        Timers.TimersManager.SetTimer(this, 3f, NextLevel);
     }
 
     public void Reload() {
         SceneManager.LoadScene(0);
+    }
+
+    public void NextLevel() {
+        gameController.LoadScene();
     }
 }
